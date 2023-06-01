@@ -21,7 +21,7 @@ import java.util.Optional;
 @Cacheable(value = "votacao", key = "#votacao.id")
 public class VotacaoService {
 
-    @Value("60")
+    @Value("300")
     private Integer tempoSessaoPadrao;
 
     @Autowired

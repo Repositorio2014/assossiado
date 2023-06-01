@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.net.MalformedURLException;
 
 @RestController
 @RequestMapping("/voto")
@@ -28,7 +29,7 @@ public class VotoController {
     private ObjectMapper objectMapper;
 
     @PostMapping("/{idPauta}/votar")
-    public ResponseEntity votar(@PathVariable("idPauta") Long idPauta, @RequestBody VotoRequestDto voto) {
+    public ResponseEntity votar(@PathVariable("idPauta") Long idPauta, @RequestBody VotoRequestDto voto) throws Exception {
         objectMapper = new ObjectMapper();
 
         votoService.votar(idPauta, objectMapper.convertValue(voto, VotoModel.class));

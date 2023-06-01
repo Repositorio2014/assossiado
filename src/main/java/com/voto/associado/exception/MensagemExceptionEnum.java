@@ -31,6 +31,12 @@ public enum MensagemExceptionEnum {
         String getMensagemDeErroDeNegocio() {
             return "Você já registrou seu noto, só é permitido um voto por pessoa!";
         }
+    },
+    CPF_INVALIDO{
+        @Override
+        String getMensagemDeErroDeNegocio() {
+            return "Este CPF não é válido!";
+        }
     };
 
     abstract String getMensagemDeErroDeNegocio();
